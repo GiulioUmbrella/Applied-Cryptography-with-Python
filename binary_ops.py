@@ -48,20 +48,20 @@ def binary_sum(x,y):
     '111':(1,1),
     }
 
-    j = 0
+    ops = 0
     carry = 0
     for i in range(len(m))[::-1]:
         bit_sum = str(m[i]) + str(n[i]) + str(carry)
         value, carry = sum_result[bit_sum]
         sum_list.insert(0,value)
-        j += 1
+        ops += 1
 
     if carry == 1:
         sum_list.insert(0,1)
-        j += 1
+        ops += 1
 
 
-    return sum_list
+    return ops, sum_list
 
 def binary_product(x,y):
 
@@ -70,21 +70,25 @@ def binary_product(x,y):
     else:
         m, n = y,x
 
+    ops = 0
     shifts = []
     list_addends = []
     for i in n[::-1]:
+        ops += 1
         if i == 1:
             list_addends.append(m+shifts)
         shifts.append(0)
 
-    i = len(list_addends)
+    i = 1
+    partial_sums = list_addends[0]
 
-    partial_sums = list_addends
-    while i > 1:
-        partial_sums = binary_sum(list_addends[i-1],list_addends[i-2])
-        i -= 1
+    while i < len(list_addends):
+        x, partial_sums = binary_sum(partial_sums,list_addends[i])
+        # partial_sums = binary_sum(partial_sums,list_addends[i])
+        ops += x
+        i += 1
 
-    return shifts, list_addends, partial_sums
+    return ops, list_addends, partial_sums
 
 def binary_division(m,n):
     pass

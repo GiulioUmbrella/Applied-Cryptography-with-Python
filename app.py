@@ -1,6 +1,8 @@
 import sys
 import time
+from random import randint
 from binary_ops import *
+
 
 def analyze_func(func_name, m,n):
     tic = time.time()
@@ -12,15 +14,27 @@ def analyze_func(func_name, m,n):
 m = cambio_di_base(int(sys.argv[1]))
 n = cambio_di_base(int(sys.argv[2]))
 
+
+#### 1 TIME COMPLEXITY #####
+
 # analyze_func(binary_sum, m,n)
 # analyze_func(binary_product, m,n)
 # a,b,c = binary_product(m,n)
-ops, sum_value = binary_sum(m,n)
-print(ops)
-print(sum_value)
+
+#### 2 PRODUCT COMPLEXITY ####
+# ops, list_addends, partial_sums = binary_product(m,n)
+# print(ops)
+# for i in list_addends:
+#     print(i)
+# print(partial_sums)
+
+#### 3 PRODUCT ####
+num_values = 10
+max_value  = 10
+list_values = randint(num_values, max_value)
+x =
+for i in list_values:
 
 
-ops, list_addends, partial_sums = binary_product(m,n)
-print(list_addends)
-print(ops)
-print(partial_sums)
+
+#### MODULAR PRODUCT ####

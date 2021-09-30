@@ -52,6 +52,7 @@ def binary_sum(x,y):
     carry = 0
     for i in range(len(m))[::-1]:
         bit_sum = str(m[i]) + str(n[i]) + str(carry)
+        # bit_key = ''.join(map(str, [m[i],n[i],carry]))
         value, carry = sum_result[bit_sum]
         sum_list.insert(0,value)
         ops += 1
@@ -84,7 +85,6 @@ def binary_product(x,y):
 
     while i < len(list_addends):
         x, partial_sums = binary_sum(partial_sums,list_addends[i])
-        # partial_sums = binary_sum(partial_sums,list_addends[i])
         ops += x
         i += 1
 
@@ -92,15 +92,3 @@ def binary_product(x,y):
 
 def binary_division(m,n):
     pass
-
-
-
-#
-# m = cambio_di_base(m,2)
-# n = cambio_di_base(n,2)
-# print(m)
-# print(n)
-# binary_product(m,n)
-# print(m)
-# print(append_leading_zeros(m,n))
-# print(x)

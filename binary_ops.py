@@ -1,7 +1,7 @@
 from random import randint
 
 def set_longer_shorter(x,y):
-    if len(x) > len(y):
+    if len(x) >= len(y):
         return x,y
     else:
         return y,x
@@ -102,19 +102,20 @@ def binary_subtraction(x,y):
     m,n = set_longer_shorter(x,y)
     n = append_leading_zeros(m,n)
 
-    print(m)
-    print(n)
-
     result_list = []
     i = len(m)-1
-    while i > -1 :
+    while i > -1:
         bit_pair = str(m[i]) + str(n[i])
         sub_res = {'00':0,'10':1,'11':0}
         if bit_pair in sub_res:
             result_list.insert(0,sub_res[bit_pair])
-        # else:
-        #     while(m[i] == 0):
-        #         i -= 1
+        else:
+            result_list.insert(0, 1)
+            i -= 1
+            while( -1 + m[i] - n[i] < 0):
+                result_list.insert(0, 1 + m[i] - n[i])
+                i -= 1
+            result_list.insert(0, 0)
         i -= 1
 
     return result_list

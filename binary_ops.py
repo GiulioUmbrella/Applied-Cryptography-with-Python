@@ -28,18 +28,13 @@ def base_10_to_base_n(numb, base=2):
 
     return r_list
 
-# assume m >= n
 def append_leading_zeros(m,n):
     dif = len(m) - len(n)
     n = [0 for i in range(dif)] + n
     return n
 
 def binary_sum(x,y):
-    if len(x) > len(y):
-        m,n = x,y
-    else:
-        m,n = y,x
-
+    m,n = set_longer_shorter(x,y)
     n = append_leading_zeros(m,n)
 
     sum_list = []
@@ -71,11 +66,7 @@ def binary_sum(x,y):
     return sum_list
 
 def binary_product(x,y):
-
-    if len(x) > len(y):
-        m, n = x,y
-    else:
-        m, n = y,x
+    m,n = set_longer_shorter(x,y)
 
     # ops = 0
     shifts = []
@@ -121,7 +112,16 @@ def binary_subtraction(x,y):
     return result_list
 
 def binary_division(m,n):
-    pass
+    q,r = [],[]
+
+    
+    while():
+        if:
+            q.append(1)
+        else:
+            q.append(0)
+
+    return q,r
 
 def sequence_product():
     pass

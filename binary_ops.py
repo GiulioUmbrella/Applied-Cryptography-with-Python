@@ -33,7 +33,7 @@ def append_leading_zeros(m,n):
     n = [0 for i in range(dif)] + n
     return n
 
-def binary_sum(x,y):
+def binary_addition(x,y):
     m,n = set_longer_shorter(x,y)
     n = append_leading_zeros(m,n)
 
@@ -81,8 +81,8 @@ def binary_product(x,y):
     partial_sums = list_addends[0]
 
     while i < len(list_addends):
-        # x, partial_sums = binary_sum(partial_sums,list_addends[i])
-        partial_sums = binary_sum(partial_sums,list_addends[i])
+        # x, partial_sums = binary_addition(partial_sums,list_addends[i])
+        partial_sums = binary_addition(partial_sums,list_addends[i])
         # ops += x
         i += 1
 
@@ -114,7 +114,7 @@ def binary_subtraction(x,y):
 def binary_division(m,n):
     q,r = [],[]
 
-    
+
     while():
         if:
             q.append(1)

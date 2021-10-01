@@ -14,7 +14,7 @@ def base_2_to_10(base_2_list):
         x += y
     return x
 
-def cambio_di_base(numb, base=2):
+def base_10_to_base_n(numb, base=2):
     r_list = []
 
     x = numb
@@ -127,7 +127,7 @@ def sequence_product():
     pass
 # num_values = 10
 # max_value  = 10
-# list_values = [cambio_di_base(randint(1, max_value)) for i in range(num_values)]
+# list_values = [base_10_to_base_n(randint(1, max_value)) for i in range(num_values)]
 #
 # partial_product = list_values[0]
 # for i in range(1,len(list_values)):

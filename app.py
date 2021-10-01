@@ -20,8 +20,8 @@ def test_values(a,b,test_values):
     for i,j in zip(x,y):
 
         diff_base_10 = i-j
-        diff_base_2 = binary_subtraction(cambio_di_base(i),
-        cambio_di_base(j))
+        diff_base_2 = binary_subtraction(base_10_to_base_n(i),
+        base_10_to_base_n(j))
         diff_base_10_check = base_2_to_10(diff_base_2)
 
         if diff_base_10 != diff_base_10_check:
@@ -32,7 +32,7 @@ def test_values(a,b,test_values):
 # test_values(1000, 10000, 5000)
 
 
-analyze_func(binary_subtraction, cambio_di_base(99999999), cambio_di_base(99999))
+analyze_func(binary_subtraction, base_10_to_base_n(99999999), base_10_to_base_n(99999))
 
 #### 1 TIME COMPLEXITY #####
 
@@ -50,7 +50,7 @@ analyze_func(binary_subtraction, cambio_di_base(99999999), cambio_di_base(99999)
 #### 3 PRODUCT ####
 # num_values = 10
 # max_value  = 10
-# list_values = [cambio_di_base(randint(1, max_value)) for i in range(num_values)]
+# list_values = [base_10_to_base_n(randint(1, max_value)) for i in range(num_values)]
 #
 # partial_product = list_values[0]
 # for i in range(1,len(list_values)):
@@ -68,8 +68,8 @@ analyze_func(binary_subtraction, cambio_di_base(99999999), cambio_di_base(99999)
 # for i,j in zip(x,y):
 #
 #     diff_base_10 = i-j
-#     diff_base_2 = binary_subtraction(cambio_di_base(i),
-#     cambio_di_base(j))
+#     diff_base_2 = binary_subtraction(base_10_to_base_n(i),
+#     base_10_to_base_n(j))
 #     diff_base_10_check = base_2_to_10(diff_base_2)
 #
 #     if diff_base_10 != diff_base_10_check:
@@ -78,8 +78,8 @@ analyze_func(binary_subtraction, cambio_di_base(99999999), cambio_di_base(99999)
 # print('total number of error',numb_err)
     # else:
     #     print(f"{i} - {j} OK")
-# m = cambio_di_base(int(sys.argv[1]))
-# n = cambio_di_base(int(sys.argv[2]))
+# m = base_10_to_base_n(int(sys.argv[1]))
+# n = base_10_to_base_n(int(sys.argv[2]))
 # print(int(sys.argv[1]), m)
 # print(int(sys.argv[2]), n)
 #
@@ -88,6 +88,6 @@ analyze_func(binary_subtraction, cambio_di_base(99999999), cambio_di_base(99999)
 # print(x)
 # print(base_2_to_10(x))
 # print(str(int(sys.argv[1])-int(sys.argv[2])))
-# print(cambio_di_base(int(sys.argv[1])-int(sys.argv[2])))
+# print(base_10_to_base_n(int(sys.argv[1])-int(sys.argv[2])))
 
 #### MODULAR PRODUCT ####

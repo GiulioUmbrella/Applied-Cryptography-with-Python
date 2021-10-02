@@ -138,17 +138,27 @@ def binary_subtraction(x,y):
 def binary_division(m,n):
     q,r = [],[]
 
-    i = 0
+    j,i = 0,0
     while(is_greater_or_equal(n,m[:i])):
         i += 1
 
-    reminder = binary_subtraction(m[:i],n)
-    # print(reminder)
-    #
-    # while(is_greater_or_equal(n, m[:i]))
-    #     i += 1
-    #
-    # print()
+    q.append(1)
+    print('leading portion','\nm' ,m[j:i],'\nn',n)
+    reminder = binary_subtraction(m[j:i],n)
+    print('reminder',reminder)
+
+    j = i
+    while(is_greater_or_equal(n, reminder)):
+        reminder.append(m[i])
+        i += 1
+        q.append(0)
+
+    reminder = binary_subtraction(m[j:i],n)
+    print(reminder)
+    # print('leading portion','\nm' ,m[j:i],'\nn',n)
+    # reminder = binary_subtraction(m[j:i],n)
+    # print('reminder',reminder)
+
 
     # check smaller portion of m larger than n and set the index
         # add one to quotient
@@ -168,7 +178,7 @@ def binary_division(m,n):
     # else:
     #     q.append(0)
 
-    return q,r
+    return q,reminder
 
 def sequence_product():
     pass

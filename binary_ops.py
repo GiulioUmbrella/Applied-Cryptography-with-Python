@@ -33,6 +33,27 @@ def append_leading_zeros(m,n):
     n = [0 for i in range(dif)] + n
     return n
 
+def is_greater_or_equal(m,n):
+    if len(m) > len(n):
+        return True
+    elif len(n) > len(m):
+        return False
+    else:
+        i = 0
+        j = 0
+
+        while( m[i] == n[i] and i < len(m) and i < len(n)):
+            i += 1
+            j += 1
+        if m[i] > n[i]:
+            return True
+        elif m[i] < n[i]:
+            return False
+        else:
+            return True
+
+
+
 def binary_addition(x,y):
     m,n = set_longer_shorter(x,y)
     n = append_leading_zeros(m,n)
@@ -114,12 +135,23 @@ def binary_subtraction(x,y):
 def binary_division(m,n):
     q,r = [],[]
 
+    # check smaller portion of m larger than n and set the index
+        # add one to quotient
 
-    while():
-        if:
-            q.append(1)
-        else:
-            q.append(0)
+    # subtract the n from portion
+
+    # if portion is smaller than n, stop
+
+    # move the index one position and add value to reminder
+
+    # check if updated reminder is larger than n
+        # if true subtract and up
+        # if false add zero to quotient
+
+    if:
+        q.append(1)
+    else:
+        q.append(0)
 
     return q,r
 

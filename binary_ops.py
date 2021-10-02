@@ -129,10 +129,26 @@ def binary_subtraction(x,y):
             result_list.insert(0, 0)
         i -= 1
 
-    return result_list
+    j = 0
+    while(result_list[j] == 0):
+        j += 1
+
+    return result_list[j:]
 
 def binary_division(m,n):
     q,r = [],[]
+
+    i = 0
+    while(is_greater_or_equal(n,m[:i])):
+        i += 1
+
+    reminder = binary_subtraction(m[:i],n)
+    # print(reminder)
+    #
+    # while(is_greater_or_equal(n, m[:i]))
+    #     i += 1
+    #
+    # print()
 
     # check smaller portion of m larger than n and set the index
         # add one to quotient

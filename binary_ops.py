@@ -40,17 +40,16 @@ def is_greater_or_equal(m,n):
         return False
     else:
         i = 0
-        j = 0
-
-        while( m[i] == n[i] and i < len(m) and i < len(n)):
+        while( m[i] == n[i] ):
             i += 1
-            j += 1
-        if m[i] > n[i]:
+            if i == len(m):
+                break
+        if i == len(m):
             return True
-        elif m[i] < n[i]:
-            return False
+        elif m[i] > n[i]:
+            return True
         else:
-            return True
+            return False
 
 
 
@@ -148,10 +147,10 @@ def binary_division(m,n):
         # if true subtract and up
         # if false add zero to quotient
 
-    if:
-        q.append(1)
-    else:
-        q.append(0)
+    # if:
+    #     q.append(1)
+    # else:
+    #     q.append(0)
 
     return q,r
 

@@ -25,9 +25,10 @@ class Binary:
 
     def __add__(self,other):
         m = self.value
-        n = self.other
+        n = other.value
 
-
+        print(m)
+        print(n)
 
         sum_list = []
         three_bits_sum = {
@@ -46,6 +47,6 @@ class Binary:
 
         return sum_list
 
-x = Binary(1)
+x = Binary(2)
 y = Binary(1)
 print(x+y)

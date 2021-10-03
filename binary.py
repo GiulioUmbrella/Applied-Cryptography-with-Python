@@ -50,7 +50,30 @@ class Binary:
 
         return sum_list
 
-x = Binary(11)
-y = Binary(1)
-z = x + y
+    def __mul__(self, other):
+        m,n = Binary.set_longer_shorter(self.value,other.value)
+
+        shifts = []
+        list_addends = []
+        for i in n[::-1]:
+            if i == 1:
+                list_addends.append(m+shifts)
+            shifts.append(0)
+
+        i = 1
+        partial_sums = list_addends[0]
+
+        while i < len(list_addends):
+            # x, partial_sums = binary_addition(partial_sums,list_addends[i])
+            partial_sums = partial_sums + list_addends[i]
+            # binary_addition(partial_sums,list_addends[i])
+            # ops += x
+            i += 1
+
+        return partial_sums
+
+
+x = Binary(4)
+y = Binary(3)
+z = x * y
 print(z)

@@ -16,10 +16,15 @@ class Binary:
     def __str__(self):
         return str(''.join(self.value))
 
+    @staticmethod
+    def set_longer_shorter(x,y):
+        if len(x) >= len(y):
+            return x,y
+        else:
+            return y,x
 
     def __add__(self,other):
-        m = self.value
-        n = self.value
+        m,n = Binary.set_longer_shorter(self.value, other.value)
 
         sum_list = []
         three_bits_sum = {

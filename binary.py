@@ -113,13 +113,26 @@ class Binary:
             return False
         else:
             i = 0
-            while(i < len(m) and m[i] == n[i]):
+            while i < len(m) and m[i] == n[i]:
                 i += 1
-
         return i == len(m)
 
+    def __ge__(self, other):
+        m = self.value
+        n = other.value
 
-
+        if len(n) > len(m):
+            return False
+        elif len(m) > len(n):
+            return True
+        else:
+            i = 0
+            while i < len(m) and m[i] == n[i]:
+                i += 1
+            if i == len(m):
+                return True
+            else:
+                return m[i] > n[i]
 
 # x = Binary(10)
 # y = Binary(2)
@@ -132,6 +145,6 @@ class Binary:
 # print(z)
 
 
-x = Binary(10)
-y = Binary(10)
-print(x == y)
+x = Binary(11)
+y = Binary(12)
+print(x >= y)

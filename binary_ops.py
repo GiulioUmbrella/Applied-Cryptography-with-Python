@@ -51,6 +51,20 @@ def is_greater_or_equal(m,n):
         else:
             return False
 
+def is_greater(m,n):
+    if len(m) > len(n):
+        return True
+    elif len(n) > len(m):
+        return False
+    else:
+        i = 0
+        while i < len(m) and m[i] == n[i]:
+            i += 1
+        if i == len(m):
+            return False
+        else:
+            return m[i] > n[i]
+
 
 
 def binary_addition(x,y):
@@ -138,49 +152,39 @@ def binary_subtraction(x,y):
     return result_list[j:]
 
 def binary_division(m,n):
-    q,r = [],[]
+    pass
+    # q = []
+    # r = []
+    # j,i = 0,1
+    # while(i < len(m)):
+    #     if is_greater_or_equal(n,r + m[j:i]):
+    #         q.append(0)
+    #         i += 1
+    #     else:
+    #         q.append(1)
+    #         j = i
+    #         r = binary_subtraction(r + m[j:i], n)
+    #
+    # return q,r
 
-    j,i = 0,0
-    while(is_greater_or_equal(n,m[:i])):
-        i += 1
 
-    q.append(1)
-    print('leading portion','\nm' ,m[j:i],'\nn',n)
-    reminder = binary_subtraction(m[j:i],n)
-    print('reminder',reminder)
-
-    j = i
-    while(is_greater_or_equal(n, reminder)):
-        reminder.append(m[i])
-        i += 1
-        q.append(0)
-
-    reminder = binary_subtraction(m[j:i],n)
-    print(reminder)
+    # q.append(1)
     # print('leading portion','\nm' ,m[j:i],'\nn',n)
     # reminder = binary_subtraction(m[j:i],n)
     # print('reminder',reminder)
-
-
-    # check smaller portion of m larger than n and set the index
-        # add one to quotient
-
-    # subtract the n from portion
-
-    # if portion is smaller than n, stop
-
-    # move the index one position and add value to reminder
-
-    # check if updated reminder is larger than n
-        # if true subtract and up
-        # if false add zero to quotient
-
-    # if:
-    #     q.append(1)
-    # else:
+    #
+    # j = i
+    # while(is_greater_or_equal(n, reminder)):
+    #     reminder.append(m[i])
+    #     i += 1
     #     q.append(0)
+    #
+    # reminder = binary_subtraction(m[j:i],n)
+    # print(reminder)
 
-    return q,reminder
+
+
+
 
 def sequence_product():
     pass

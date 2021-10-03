@@ -1,20 +1,23 @@
 class Binary:
 
-    def __init__(self, numb):
-        r_list = []
+    def __init__(self, numb=None):
+        if numb == None:
+            self.value = []
+        else:
+            r_list = []
 
-        x = numb
-        while x > 0:
-            r = x % 2
-            q = (x - r)//2
-            x = q
-            r_list.append(r)
+            x = numb
+            while x > 0:
+                r = x % 2
+                q = (x - r)//2
+                x = q
+                r_list.append(r)
 
-        r_list = r_list[::-1]
-        self.value = r_list
+            r_list = r_list[::-1]
+            self.value = r_list
 
     def __str__(self):
-        return str(''.join(self.value))
+        return str(self.value)
 
     @staticmethod
     def set_longer_shorter(x,y):
@@ -48,7 +51,9 @@ class Binary:
         if carry == 1:
             sum_list.insert(0,1)
 
-        return sum_list
+        y = Binary()
+        y.value = sum_list
+        return y
 
     def __mul__(self, other):
         m,n = Binary.set_longer_shorter(self.value,other.value)
@@ -57,23 +62,26 @@ class Binary:
         list_addends = []
         for i in n[::-1]:
             if i == 1:
-                list_addends.append(m+shifts)
+                x = Binary()
+                x.value = m+shifts
+                list_addends.append(x)
             shifts.append(0)
 
         i = 1
         partial_sums = list_addends[0]
 
         while i < len(list_addends):
-            # x, partial_sums = binary_addition(partial_sums,list_addends[i])
             partial_sums = partial_sums + list_addends[i]
-            # binary_addition(partial_sums,list_addends[i])
-            # ops += x
             i += 1
 
         return partial_sums
 
-
-x = Binary(4)
-y = Binary(3)
+x = Binary(10)
+y = Binary(2)
 z = x * y
+print(type(x))
+print(type(y))
+print(type(z))
+print(x)
+print(y)
 print(z)

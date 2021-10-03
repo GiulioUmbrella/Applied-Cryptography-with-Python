@@ -105,12 +105,33 @@ class Binary:
 
         return partial_sums
 
+    def __eq__(self,other):
+        m = self.value
+        n = other.value
+
+        if len(m) != len(n):
+            return False
+        else:
+            i = 0
+            while(i < len(m) and m[i] == n[i]):
+                i += 1
+
+        return i == len(m)
+
+
+
+
+# x = Binary(10)
+# y = Binary(2)
+# z = x - y
+# print(type(x))
+# print(type(y))
+# print(type(z))
+# print(x)
+# print(y)
+# print(z)
+
+
 x = Binary(10)
-y = Binary(2)
-z = x - y
-print(type(x))
-print(type(y))
-print(type(z))
-print(x)
-print(y)
-print(z)
+y = Binary(10)
+print(x == y)

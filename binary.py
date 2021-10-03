@@ -55,6 +55,35 @@ class Binary:
         y.value = sum_list
         return y
 
+
+    def __sub__(self,other):
+        m,n = Binary.set_longer_shorter(self.value,other.value)
+        n = Binary.append_leading_zeros(m,n)
+
+        sub_res = {'00':0,'10':1,'11':0}
+        result_list = []
+        i = len(m)-1
+
+
+        while i > -1:
+            bit_pair = str(m[i]) + str(n[i])
+
+            if bit_pair in sub_res:
+                result_list.insert(0,sub_res[bit_pair])
+            else:
+                result_list.insert(0, 1)
+                i -= 1
+                while( -1 + m[i] - n[i] < 0):
+                    result_list.insert(0, 1 + m[i] - n[i])
+                    i -= 1
+                result_list.insert(0, 0)
+            i -= 1
+
+        x = Binary()
+        x.value = result_list
+        return x
+
+
     def __mul__(self, other):
         m,n = Binary.set_longer_shorter(self.value,other.value)
 
@@ -78,7 +107,7 @@ class Binary:
 
 x = Binary(10)
 y = Binary(2)
-z = x * y
+z = x - y
 print(type(x))
 print(type(y))
 print(type(z))

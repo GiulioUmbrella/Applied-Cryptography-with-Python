@@ -115,9 +115,11 @@ def binary_subtraction(x,y):
 
     result_list = []
     i = len(m)-1
+    sub_res = {'00':0,'10':1,'11':0}
+
     while i > -1:
         bit_pair = str(m[i]) + str(n[i])
-        sub_res = {'00':0,'10':1,'11':0}
+
         if bit_pair in sub_res:
             result_list.insert(0,sub_res[bit_pair])
         else:

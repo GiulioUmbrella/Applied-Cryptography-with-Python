@@ -24,7 +24,10 @@ class Binary:
             return y,x
 
     def __add__(self,other):
-        m,n = Binary.set_longer_shorter(self.value, other.value)
+        m = self.value
+        n = self.other
+
+
 
         sum_list = []
         three_bits_sum = {

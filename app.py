@@ -2,6 +2,7 @@ import sys
 import time
 from random import randint
 from binary_ops import *
+from binary import Binary
 
 
 def analyze_func(func_name, m,n):
@@ -29,15 +30,13 @@ def test_values(a,b,test_values):
 
     print('total number of error',numb_err)
 
-# test_values(1000, 10000, 5000)
-
-
-analyze_func(binary_subtraction, base_10_to_base_n(99999999), base_10_to_base_n(99999))
+test_values(1000, 10000, 5000)
 
 #### 1 TIME COMPLEXITY #####
-
-# analyze_func(binary_sum, m,n)
+analyze_func(Binary.__sub__,Binary(2**1000-1), Binary(1))
+# analyze_func(binary_addition, m,n)
 # analyze_func(binary_product, m,n)
+# analyze_func(binary_subtraction, base_10_to_base_n(99999999),
 # a,b,c = binary_product(m,n)
 
 #### 2 PRODUCT COMPLEXITY ####
@@ -59,30 +58,11 @@ analyze_func(binary_subtraction, base_10_to_base_n(99999999), base_10_to_base_n(
 # print(partial_product)
 
 #### SUBTRACTION ####
-# from random import randint
-#
-# x = [randint(100001, 5000000) for i in range(10000)]
-# y = [randint(1, 10000) for i in range(10000)]
-#
-# numb_err = 0
-# for i,j in zip(x,y):
-#
-#     diff_base_10 = i-j
-#     diff_base_2 = binary_subtraction(base_10_to_base_n(i),
-#     base_10_to_base_n(j))
-#     diff_base_10_check = base_2_to_10(diff_base_2)
-#
-#     if diff_base_10 != diff_base_10_check:
-#         numb_err += 1
-#
-# print('total number of error',numb_err)
-    # else:
-    #     print(f"{i} - {j} OK")
+
 # m = base_10_to_base_n(int(sys.argv[1]))
 # n = base_10_to_base_n(int(sys.argv[2]))
 # print(int(sys.argv[1]), m)
 # print(int(sys.argv[2]), n)
-#
 #
 # x = binary_subtraction(m,n)
 # print(x)

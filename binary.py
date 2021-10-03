@@ -23,12 +23,15 @@ class Binary:
         else:
             return y,x
 
-    def __add__(self,other):
-        m = self.value
-        n = other.value
+    @staticmethod
+    def append_leading_zeros(m,n):
+        dif = len(m) - len(n)
+        n = [0 for i in range(dif)] + n
+        return n
 
-        print(m)
-        print(n)
+    def __add__(self,other):
+        m,n = Binary.set_longer_shorter(self.value,other.value)
+        n = Binary.append_leading_zeros(m,n)
 
         sum_list = []
         three_bits_sum = {
@@ -47,6 +50,7 @@ class Binary:
 
         return sum_list
 
-x = Binary(2)
+x = Binary(11)
 y = Binary(1)
-print(x+y)
+z = x + y
+print(z)

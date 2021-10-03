@@ -146,26 +146,34 @@ def binary_subtraction(x,y):
         i -= 1
 
     j = 0
-    while(result_list[j] == 0):
+    while(j < len(result_list)-1 and  result_list[j] == 0):
         j += 1
 
     return result_list[j:]
 
 def binary_division(m,n):
-    pass
-    # q = []
-    # r = []
-    # j,i = 0,1
-    # while(i < len(m)):
-    #     if is_greater_or_equal(n,r + m[j:i]):
-    #         q.append(0)
-    #         i += 1
-    #     else:
-    #         q.append(1)
-    #         j = i
-    #         r = binary_subtraction(r + m[j:i], n)
-    #
-    # return q,r
+
+    q = []
+    r = []
+    j,i = 0,1
+    while(i < len(m)):
+
+        if is_greater(n,r + m[j:i]):
+            q.append(0)
+        else:
+            print(j,i)
+            print('q', q)
+            print('r', r)
+            print('m[j:i]', m[j:i])
+            print('r + m[j:i]',r + m[j:i])
+
+
+            q.append(1)
+            r = binary_subtraction(r + m[j:i], n)
+            j = i
+        i += 1
+
+    return q,r
 
 
     # q.append(1)

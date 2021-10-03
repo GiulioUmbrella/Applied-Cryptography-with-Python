@@ -124,8 +124,9 @@ def binary_product(x,y):
     # return ops, list_addends, partial_sums
 
 def binary_subtraction(x,y):
-    m,n = set_longer_shorter(x,y)
-    n = append_leading_zeros(m,n)
+    # m,n = set_longer_shorter(x,y)
+    m = x
+    n = append_leading_zeros(x,y)
 
     result_list = []
     i = len(m)-1
@@ -146,7 +147,7 @@ def binary_subtraction(x,y):
         i -= 1
 
     j = 0
-    while(j < len(result_list)-1 and  result_list[j] == 0):
+    while(j < len(result_list)-1 and result_list[j] == 0):
         j += 1
 
     return result_list[j:]
@@ -156,7 +157,7 @@ def binary_division(m,n):
     q = []
     r = []
     j,i = 0,1
-    while(i < len(m)):
+    while(i < len(m)+1):
 
         if is_greater(n,r + m[j:i]):
             q.append(0)
@@ -167,31 +168,12 @@ def binary_division(m,n):
             print('m[j:i]', m[j:i])
             print('r + m[j:i]',r + m[j:i])
 
-
             q.append(1)
             r = binary_subtraction(r + m[j:i], n)
             j = i
         i += 1
 
     return q,r
-
-
-    # q.append(1)
-    # print('leading portion','\nm' ,m[j:i],'\nn',n)
-    # reminder = binary_subtraction(m[j:i],n)
-    # print('reminder',reminder)
-    #
-    # j = i
-    # while(is_greater_or_equal(n, reminder)):
-    #     reminder.append(m[i])
-    #     i += 1
-    #     q.append(0)
-    #
-    # reminder = binary_subtraction(m[j:i],n)
-    # print(reminder)
-
-
-
 
 
 def sequence_product():

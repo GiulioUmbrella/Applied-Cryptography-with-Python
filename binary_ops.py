@@ -182,8 +182,8 @@ def binary_mod(m,n):
     return r
 
 
-def sequence_product():
-    pass
+# def sequence_product():
+#     pass
 # num_values = 10
 # max_value  = 10
 # list_values = [base_10_to_base_n(randint(1, max_value)) for i in range(num_values)]
@@ -194,5 +194,5 @@ def sequence_product():
 #
 # print(partial_product)
 
-def sequence_product_modular():
-    pass
+# def sequence_product_modular():
+#     pass

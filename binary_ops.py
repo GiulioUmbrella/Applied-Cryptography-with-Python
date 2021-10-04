@@ -161,22 +161,19 @@ def binary_division(m,n):
     r = []
     j,i = 0,1
     while(i < len(m)+1): # ?
-
-        if is_greater(n,r + m[j:i]):
+        print('r + m[j:i]',remove_leading_zeros(r + m[j:i]))
+        if is_greater(n,remove_leading_zeros(r + m[j:i])):
             q.append(0)
         else:
-            # print(j,i)
-            # print('q', q)
-            # print('r', r)
-            # print('m[j:i]', m[j:i])
-            # print('r + m[j:i]',r + m[j:i])
             q.append(1)
-            r = binary_subtraction(r + m[j:i], n)
-            # r = binary_subtraction(r, n)
+            r = remove_leading_zeros(binary_subtraction(r + m[j:i],n))
             j = i
         i += 1
+        print('q',q)
+        print('r',r)
+        print('\n')
 
-    return q,r
+    return remove_leading_zeros(q), remove_leading_zeros(r + m[j:i])
 
 
 def sequence_product():

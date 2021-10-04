@@ -177,6 +177,10 @@ def binary_division(m,n):
 
     return remove_leading_zeros(q), r
 
+def binary_mod(m,n):
+    q,r = binary_division(m,n)
+    return r
+
 
 def sequence_product():
     pass

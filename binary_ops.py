@@ -162,20 +162,20 @@ def binary_division(m,n):
     j,i = 0,1
     while(i < len(m)+1): # ?
         d = remove_leading_zeros(r + m[j:i])
-
-        print('d',d, 'n',n)
+        # print(i)
+        # print('d',d, 'n',n)
         if is_greater(n,d):
             q.append(0)
         else:
             q.append(1)
-            r = remove_leading_zeros(binary_subtraction(d,n))
+            r = binary_subtraction(d,n)
             j = i
         i += 1
-        print('q',q)
-        print('r',r)
-        print('\n')
+        # print('q',q)
+        # print('r',r)
+        # print('\n')
 
-    return remove_leading_zeros(q), remove_leading_zeros(r + m[j:i])
+    return remove_leading_zeros(q), r
 
 
 def sequence_product():

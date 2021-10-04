@@ -157,13 +157,16 @@ def binary_subtraction(x,y):
 
 def binary_division(m,n):
 
+    if len(m) < len(n):
+        return [0], m
+
     q = []
-    r = []
+    r = [0]
     j,i = 0,1
     while(i < len(m)+1): # ?
         d = remove_leading_zeros(r + m[j:i])
-        # print(i)
-        # print('d',d, 'n',n)
+        print(i)
+        print('d',d, 'n',n)
         if is_greater(n,d):
             q.append(0)
         else:
@@ -171,9 +174,9 @@ def binary_division(m,n):
             r = binary_subtraction(d,n)
             j = i
         i += 1
-        # print('q',q)
-        # print('r',r)
-        # print('\n')
+        print('q',q)
+        print('r',r)
+        print('\n')
 
     return remove_leading_zeros(q), r
 

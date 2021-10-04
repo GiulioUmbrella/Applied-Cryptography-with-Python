@@ -161,12 +161,14 @@ def binary_division(m,n):
     r = []
     j,i = 0,1
     while(i < len(m)+1): # ?
-        print('r + m[j:i]',remove_leading_zeros(r + m[j:i]))
-        if is_greater(n,remove_leading_zeros(r + m[j:i])):
+        d = remove_leading_zeros(r + m[j:i])
+
+        print('d',d, 'n',n)
+        if is_greater(n,d):
             q.append(0)
         else:
             q.append(1)
-            r = remove_leading_zeros(binary_subtraction(r + m[j:i],n))
+            r = remove_leading_zeros(binary_subtraction(d,n))
             j = i
         i += 1
         print('q',q)

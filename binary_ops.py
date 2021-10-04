@@ -33,6 +33,13 @@ def append_leading_zeros(m,n):
     n = [0 for i in range(dif)] + n
     return n
 
+def remove_leading_zeros(n):
+    j = 0
+    while(j < len(n)-1 and n[j] == 0):
+        j += 1
+    return n[j:]
+
+
 def is_greater_or_equal(m,n):
     if len(m) > len(n):
         return True
@@ -146,30 +153,26 @@ def binary_subtraction(x,y):
             result_list.insert(0, 0)
         i -= 1
 
-    j = 0
-    while(j < len(result_list)-1 and result_list[j] == 0):
-        j += 1
-
-    return result_list[j:]
+    return remove_leading_zeros(result_list)
 
 def binary_division(m,n):
 
     q = []
     r = []
     j,i = 0,1
-    while(i < len(m)+1):
+    while(i < len(m)+1): # ?
 
         if is_greater(n,r + m[j:i]):
             q.append(0)
         else:
-            print(j,i)
-            print('q', q)
-            print('r', r)
-            print('m[j:i]', m[j:i])
-            print('r + m[j:i]',r + m[j:i])
-
+            # print(j,i)
+            # print('q', q)
+            # print('r', r)
+            # print('m[j:i]', m[j:i])
+            # print('r + m[j:i]',r + m[j:i])
             q.append(1)
             r = binary_subtraction(r + m[j:i], n)
+            # r = binary_subtraction(r, n)
             j = i
         i += 1
 

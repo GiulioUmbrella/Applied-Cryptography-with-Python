@@ -109,9 +109,9 @@ def binary_addition(x,y):
 def binary_product(x,y):
     m,n = set_longer_shorter(x,y)
 
-    # ops = 0
+    
     shifts = []
-    list_addends = []
+    list_addends = [[0]]
     for i in n[::-1]:
         # ops += 1
         if i == 1:
@@ -165,22 +165,21 @@ def binary_division(m,n):
     j,i = 0,1
     while(i < len(m)+1): # ?
         d = remove_leading_zeros(r + m[j:i])
-        print(i)
-        print('d',d, 'n',n)
+        # print(i)
+        # print('d',d, 'n',n)
         if is_greater(n,d):
-            # r = d
             q.append(0)
         else:
             q.append(1)
             r = binary_subtraction(d,n)
             j = i
         i += 1
-        print('q',q)
-        print('r',r)
-        print('\n')
-    # 
-    # if is_greater(n,d):
-    #     r = d
+        # print('q',q)
+        # print('r',r)
+        # print('\n')
+
+    if is_greater(n,d):
+        r = d
 
     return remove_leading_zeros(q), r
 

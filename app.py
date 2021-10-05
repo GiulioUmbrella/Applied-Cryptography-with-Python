@@ -4,27 +4,21 @@ from random import randint
 from binary_ops import *
 
 
-def analyze_func(func_name, m,n):
-    tic = time.time()
-    func_name(m,n)
-    toc = time.time()
-    seconds = toc - tic
-    print(f"{func_name.__name__.capitalize()}\t -> Elapsed time: {seconds:.5f}")
 
-def test_values(a,b,test_values):
+#
+# tic = time.time()
+# p = [1]
+# for i in seq:
+#     p = binary_mod(binary_product(p, i), mod_value)
+# toc = time.time()
+# seconds = toc - tic
+# print(seconds)
 
-    x = [randint(a+1, b) for i in range(test_values)]
-    y = [randint(1, a) for i in range(test_values)]
 
-    numb_err = 0
-    for i,j in zip(x,y):
-
-        diff_base_10 = i-j
-        diff_base_2 = binary_subtraction(base_10_to_base_n(i),
-        base_10_to_base_n(j))
-        diff_base_10_check = base_2_to_10(diff_base_2)
-
-        if diff_base_10 != diff_base_10_check:
-            numb_err += 1
-
-    print('total number of error',numb_err)
+# x = [0]
+# y = [1, 0, 0, 0, 1, 1, 1]
+# x = [1,1,1]
+# y = [1,1,0]
+# print(binary_addition(x,y))
+# print(binary_product(x,y))
+# print(binary_mod(x,y))

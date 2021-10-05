@@ -32,6 +32,18 @@ class Binary:
         n = [0 for i in range(dif)] + n
         return n
 
+
+    @staticmethod
+    def remove_leading_zero(m):
+        pass
+
+    @staticmethood
+    def base10_to_base2(m):
+        pass
+
+    def base10():
+        pass
+
     def __add__(self,other):
         m,n = Binary.set_longer_shorter(self.value,other.value)
         n = Binary.append_leading_zeros(m,n)

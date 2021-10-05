@@ -19,6 +19,10 @@ from binary_ops import *
 # print(binary_mod(m,n))
 
 
+# PRODUCT TEST
+# multiply per zero
+
+
 # DIVISION TEST
 # return a reminder when d is less than n at the end of the while loop
 x = base_10_to_base_n(5)

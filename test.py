@@ -1,20 +1,39 @@
-x = [0]
-print(remove_leading_zeros(x))
+from binary_ops import *
 
-y = [0,0,1]
-print(remove_leading_zeros(y))
+# x = [0]
+# print(remove_leading_zeros(x))
+#
+# y = [0,0,1]
+# print(remove_leading_zeros(y))
+#
+# z = [1]
+# print(remove_leading_zeros(z))
+#
+#
+# m = base_10_to_base_n(27)
+# n = base_10_to_base_n(3)
+# print(m)
+# print(n)
+# print(binary_product(m,n))
+# print(binary_division(m,n))
+# print(binary_mod(m,n))
 
-z = [1]
-print(remove_leading_zeros(z))
 
+# DIVISION TEST
+# return a reminder when d is less than n at the end of the while loop
+x = base_10_to_base_n(5)
+y = base_10_to_base_n(2)
+binary_division(x, y)
+# 1 zero reminder check
+# 5 / 2
 
-m = base_10_to_base_n(27)
-n = base_10_to_base_n(3)
-print(m)
-print(n)
-print(binary_product(m,n))
-print(binary_division(m,n))
-print(binary_mod(m,n))
+# REM
+print(remove_leading_zeros([0]))
+print(remove_leading_zeros([0,0]))
+print(remove_leading_zeros([0,0,1]))
+print(remove_leading_zeros([1,0,1]))
+print(remove_leading_zeros([1,0,1,0]))
+
 
 
 def test_values(a,b,test_values):

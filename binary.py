@@ -4,9 +4,11 @@ class Binary:
         if numb == None:
             self.value = []
         elif type(numb) == int:
+            print(1)
             self.value = Binary.base10_to_base2(numb)
         elif type(numb) == list:
-            self.value = numb
+            # remove leading zeros
+            self.value = Binary.remove_leading_zero(numb)
 
     def __str__(self):
         return str(self.value)
@@ -27,9 +29,12 @@ class Binary:
 
     @staticmethod
     def remove_leading_zero(m):
-        pass
+        j = 0
+        while(j < len(m)-1 and m[j] == 0):
+            j += 1
+        return m[j:]
 
-    @staticmethood
+    @staticmethod
     def base10_to_base2(m):
         r_list = []
         # x = q*2 + r
@@ -42,12 +47,13 @@ class Binary:
             x = q
             r_list.append(r)
 
-        r_list = r_list[::-1]
+        return r_list[::-1]
+
 
     def base10(self):
         x = 0
         for i in range(len(self.value))[::-1]:
-            x += 2 ** i * base_2_list[-i-1]
+            x += 2 ** i * self.value[-i-1]
         return x
 
     def __add__(self,other):
@@ -69,6 +75,7 @@ class Binary:
         if carry == 1:
             sum_list.insert(0,1)
 
+        # Return a binary object
         y = Binary()
         y.value = sum_list
         return y
@@ -97,6 +104,7 @@ class Binary:
                 result_list.insert(0, 0)
             i -= 1
 
+        # return a binary object
         x = Binary()
         x.value = result_list
         return x
@@ -106,7 +114,7 @@ class Binary:
         m,n = Binary.set_longer_shorter(self.value,other.value)
 
         shifts = []
-        list_addends = []
+        list_addends = [] # substitute with a Binary object with zero
         for i in n[::-1]:
             if i == 1:
                 x = Binary()
@@ -122,6 +130,18 @@ class Binary:
             i += 1
 
         return partial_sums
+
+
+    # Divisione euclidea
+
+    # mod
+
+    # power
+
+    # right shift
+
+    # left shift
+
 
     def __eq__(self,other):
         m = self.value
@@ -170,17 +190,6 @@ class Binary:
             else:
                 return m[i] > n[i]
 
+
+
 # x = Binary(10)
-# y = Binary(2)
-# z = x - y
-# print(type(x))
-# print(type(y))
-# print(type(z))
-# print(x)
-# print(y)
-# print(z)
-
-
-x = Binary(1)
-y = Binary(11)
-print(x > y)

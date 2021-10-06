@@ -75,10 +75,7 @@ class Binary:
         if carry == 1:
             sum_list.insert(0,1)
 
-        # Return a binary object
-        y = Binary()
-        y.value = sum_list
-        return y
+        return Binary(sum_list)
 
 
     def __sub__(self,other):

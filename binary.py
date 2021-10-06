@@ -102,9 +102,7 @@ class Binary:
             i -= 1
 
         # return a binary object
-        x = Binary()
-        x.value = result_list
-        return x
+        return Binary(result_list)
 
 
     def __mul__(self, other):

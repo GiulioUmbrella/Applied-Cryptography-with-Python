@@ -13,6 +13,26 @@ def test_constructor_list():
     x = Binary([1,0,1,0])
     assert x.value == [1,0,1,0]
 
+def test_constructor_list_with_leading_zero():
+    x = Binary([0,1])
+    assert x.value == [1]
+
+def test_constructor_list_without_leading_zero():
+    x = Binary([0])
+    assert x.value == [0]
+
+def test_base10():
+    x = Binary([1,0,1,0])
+    assert x.base10() == 10
+
+def test_binary_addition():
+    z = Binary(2) + Binary(2)
+    assert z.base10() == 4
+
+def test_binary_subtraction():
+    z = Binary(2) - Binary(2)
+    assert z.base10() == 0
+
 
 
 # x = [0]

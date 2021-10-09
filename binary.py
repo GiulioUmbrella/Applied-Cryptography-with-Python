@@ -101,7 +101,6 @@ class Binary:
                 result_list.insert(0, 0)
             i -= 1
 
-        # return a binary object
         return Binary(result_list)
 
 
@@ -109,27 +108,55 @@ class Binary:
         m,n = Binary.set_longer_shorter(self.value,other.value)
 
         shifts = []
-        list_addends = [] # substitute with a Binary object with zero
+        list_addends = [[0]]
         for i in n[::-1]:
             if i == 1:
-                x = Binary()
-                x.value = m+shifts
-                list_addends.append(x)
+                list_addends.append(m+shifts)
             shifts.append(0)
 
         i = 1
         partial_sums = list_addends[0]
 
         while i < len(list_addends):
-            partial_sums = partial_sums + list_addends[i]
+            partial_sums = binary_addition(partial_sums,list_addends[i])
             i += 1
 
-        return partial_sums
+        return Binary(partial_sums)
 
 
-    # Divisione euclidea
+    def __truediv__(self, other):
+        m = self.value
+        n = other.value
 
-    # mod
+        if len(m) < len(n):
+            return Binary(0), self
+
+        q = []
+        r = []
+        j,i = 0,1
+        while(i < len(m)+1): # ?
+            d = remove_leading_zeros(r + m[j:i])
+            # print(i)
+            # print('d',d, 'n',n)
+            if is_greater(n,d):
+                q.append(0)
+            else:
+                q.append(1)
+                r = binary_subtraction(d,n)
+                j = i
+            i += 1
+            # print('q',q)
+            # print('r',r)
+            # print('\n')
+
+        if is_greater(n,d):
+            r = d
+
+        return Binary(q), Binary(r)
+
+    def __mod__(self, other):
+        q,r = self / other
+        return r
 
     # power
 

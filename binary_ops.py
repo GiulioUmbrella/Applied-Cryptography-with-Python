@@ -1,5 +1,3 @@
-from random import randint
-
 def set_longer_shorter(x,y):
     if len(x) >= len(y):
         return x,y
@@ -109,7 +107,7 @@ def binary_addition(x,y):
 def binary_product(x,y):
     m,n = set_longer_shorter(x,y)
 
-    
+
     shifts = []
     list_addends = [[0]]
     for i in n[::-1]:
@@ -131,8 +129,7 @@ def binary_product(x,y):
     # return ops, list_addends, partial_sums
 
 def binary_subtraction(x,y):
-    # m,n = set_longer_shorter(x,y)
-    m = x
+    m,n = set_longer_shorter(x,y)
     n = append_leading_zeros(x,y)
 
     result_list = []

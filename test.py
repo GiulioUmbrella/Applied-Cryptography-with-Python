@@ -1,6 +1,6 @@
-from binary import Binary
-# import Binary
+from binary import *
 
+##### CONSTRUCTOR ######
 def test_constructor_empty():
     x = Binary()
     assert x.value == []
@@ -25,6 +25,8 @@ def test_base10():
     x = Binary([1,0,1,0])
     assert x.base10() == 10
 
+#### BINARY OPERATIONS ####
+
 def test_binary_addition():
     z = Binary(2) + Binary(2)
     assert z.base10() == 4
@@ -33,16 +35,27 @@ def test_binary_subtraction():
     z = Binary(2) - Binary(2)
     assert z.base10() == 0
 
+def test_binary_multiplicaton():
+    z = Binary(2) * Binary(2)
+    assert z.base10() == 4
+
+def test_binary_multiplicaton_with_zero():
+    z = Binary(2) * Binary(2)
+    assert z.base10() == 4
+
+def test_binary_multiplicaton_with_zero_dx():
+    z = Binary(2) * Binary(0)
+    assert z.base10() == 0
+
+def test_binary_multiplicaton_with_zero_sx():
+    z = Binary(0) * Binary(2)
+    assert z.base10() == 0
+
+def test_binary_multiplicaton_with_zero_dx_sx():
+    z = Binary(0) * Binary(0)
+    assert z.base10() == 0
 
 
-# x = [0]
-# print(remove_leading_zeros(x))
-#
-# y = [0,0,1]
-# print(remove_leading_zeros(y))
-#
-# z = [1]
-# print(remove_leading_zeros(z))
 #
 #
 # m = base_10_to_base_n(27)
@@ -72,11 +85,6 @@ def test_binary_subtraction():
 # print(x > y)
 
 
-
-# PRODUCT TEST
-# multiply per zero
-
-
 # DIVISION TEST
 # # return a reminder when d is less than n at the end of the while loop
 # x = base_10_to_base_n(5)
@@ -85,12 +93,7 @@ def test_binary_subtraction():
 # # 1 zero reminder check
 # # 5 / 2
 #
-# # REM
-# print(remove_leading_zeros([0]))
-# print(remove_leading_zeros([0,0]))
-# print(remove_leading_zeros([0,0,1]))
-# print(remove_leading_zeros([1,0,1]))
-# print(remove_leading_zeros([1,0,1,0]))
+
 #
 #
 #

@@ -1,12 +1,10 @@
-from random import randint
-
 def set_longer_shorter(x,y):
     if len(x) >= len(y):
         return x,y
     else:
         return y,x
 
-def base_2_to_10(base_2_list):
+def base_2_to_base_10(base_2_list):
     x = 0
     for i in range(len(base_2_list))[::-1]:
         y = 2 ** i * base_2_list[-i-1]
@@ -14,19 +12,18 @@ def base_2_to_10(base_2_list):
         x += y
     return x
 
-def base_10_to_base_n(numb, base=2):
+def base_10_to_base_2(numb):
     r_list = []
 
     x = numb
     while x > 0:
-        r = x % base
+        r = x % 2
         q = (x - r)//2
         x = q
         r_list.append(r)
 
-    r_list = r_list[::-1]
+    return r_list[::-1]
 
-    return r_list
 
 def append_leading_zeros(m,n):
     dif = len(m) - len(n)
@@ -39,6 +36,14 @@ def remove_leading_zeros(n):
         j += 1
     return n[j:]
 
+def is_equal(m,n):
+    if len(m) != len(n):
+        return False
+
+    i = 0
+    while i < len(m) and m[i] == n[i]:
+        i += 1
+    return i == len(m)
 
 def is_greater_or_equal(m,n):
     if len(m) > len(n):
@@ -47,16 +52,12 @@ def is_greater_or_equal(m,n):
         return False
     else:
         i = 0
-        while( m[i] == n[i] ):
+        while i < len(m) and m[i] == n[i]:
             i += 1
-            if i == len(m):
-                break
         if i == len(m):
             return True
-        elif m[i] > n[i]:
-            return True
         else:
-            return False
+            return m[i] > n[i]
 
 def is_greater(m,n):
     if len(m) > len(n):
@@ -109,7 +110,7 @@ def binary_addition(x,y):
 def binary_product(x,y):
     m,n = set_longer_shorter(x,y)
 
-    
+
     shifts = []
     list_addends = [[0]]
     for i in n[::-1]:
@@ -182,10 +183,6 @@ def binary_division(m,n):
         r = d
 
     return remove_leading_zeros(q), r
-
-def binary_mod(m,n):
-    q,r = binary_division(m,n)
-    return r
 
 
 # def sequence_product():

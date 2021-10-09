@@ -4,7 +4,6 @@ class Binary:
         if numb == None:
             self.value = []
         elif type(numb) == int:
-            print(1)
             self.value = Binary.base10_to_base2(numb)
         elif type(numb) == list:
             # remove leading zeros

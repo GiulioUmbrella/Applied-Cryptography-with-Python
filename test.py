@@ -56,6 +56,10 @@ def test_binary_multiplicaton_with_zero_dx_sx():
     assert z.base10() == 0
 
 
+def test_greater_or_equal():
+    assert Binary(2) > Binary(1)
+
+
 #
 #
 # m = base_10_to_base_n(27)

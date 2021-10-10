@@ -55,6 +55,16 @@ def test_binary_multiplicaton_with_zero_dx_sx():
     z = Binary(0) * Binary(0)
     assert z.base10() == 0
 
+def test_binary_power():
+    z = Binary(5) ** Binary(2)
+    assert z.base10() == 25
+
+
+def test_equal():
+    assert Binary(1) == Binary(1)
+
+def test_greater():
+    assert Binary(2) > Binary(1)
 
 def test_greater_or_equal():
     assert Binary(2) > Binary(1)

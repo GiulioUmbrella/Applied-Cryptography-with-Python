@@ -34,6 +34,9 @@ class Binary:
         q,r = binary_division(self.value, other.value)
         return Binary(r)
 
+    def __pow__(self, other):
+        return Binary(binary_power(self.value, other.value))
+
     def __eq__(self,other):
         return is_equal(self.value, other.value)
 

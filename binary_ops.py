@@ -156,6 +156,17 @@ def binary_division(m,n):
     return remove_leading_zeros(q), r
 
 
+def binary_power(m,n):
+
+    p = [1]
+    a = m
+
+    for i in n[::-1]:
+        if i == 1:
+            p = binary_product(p,a)
+        a = binary_product(a,a)
+    return p
+
 # def sequence_product():
 #     pass
 # num_values = 10

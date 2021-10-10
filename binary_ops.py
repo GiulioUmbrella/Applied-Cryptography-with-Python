@@ -47,9 +47,6 @@ def is_equal(m,n):
 
 def is_greater(m,n):
 
-    if is_equal(m,n):
-        return False
-
     if len(m) > len(n):
         return True
     elif len(n) > len(m):
@@ -58,7 +55,10 @@ def is_greater(m,n):
         i = 0
         while i < len(m) and m[i] == n[i]:
             i += 1
-        return m[i] > n[i]
+        if i == len(m):
+            return False
+        else:
+            return m[i] > n[i]
 
 def is_greater_or_equal(m,n):
     return is_greater(m,n) or is_equal(m,n)

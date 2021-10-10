@@ -45,20 +45,6 @@ def is_equal(m,n):
         i += 1
     return i == len(m)
 
-def is_greater_or_equal(m,n):
-    if len(m) > len(n):
-        return True
-    elif len(n) > len(m):
-        return False
-    else:
-        i = 0
-        while i < len(m) and m[i] == n[i]:
-            i += 1
-        if i == len(m):
-            return True
-        else:
-            return m[i] > n[i]
-
 def is_greater(m,n):
     if len(m) > len(n):
         return True
@@ -73,6 +59,22 @@ def is_greater(m,n):
         else:
             return m[i] > n[i]
 
+def is_greater_or_equal(m,n):
+    if len(m) > len(n):
+        return True
+    elif len(n) > len(m):
+        return False
+    else:
+        i = 0
+        while i < len(m) and m[i] == n[i]:
+            i += 1
+        if i == len(m):
+            return True
+        else:
+            return m[i] > n[i]
+
+
+
 
 
 def binary_addition(x,y):
@@ -81,35 +83,23 @@ def binary_addition(x,y):
 
     sum_list = []
     sum_result = {
-    '000':(0,0),
-    '010':(1,0),
-    '100':(1,0),
-    '110':(0,1),
-    '001':(1,0),
-    '011':(0,1),
-    '101':(0,1),
-    '111':(1,1),
+    '000':(0,0), '010':(1,0), '100':(1,0), '110':(0,1),
+    '001':(1,0), '011':(0,1), '101':(0,1), '111':(1,1),
     }
 
-    # ops = 0
     carry = 0
     for i in range(len(m))[::-1]:
         bit_sum = str(m[i]) + str(n[i]) + str(carry)
-        # bit_key = ''.join(map(str, [m[i],n[i],carry]))
         value, carry = sum_result[bit_sum]
         sum_list.insert(0,value)
-        # ops += 1
 
     if carry == 1:
         sum_list.insert(0,1)
-        # ops += 1
-
 
     return sum_list
 
 def binary_product(x,y):
     m,n = set_longer_shorter(x,y)
-
 
     shifts = []
     list_addends = [[0]]

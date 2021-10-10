@@ -52,32 +52,17 @@ def is_greater(m,n):
     elif len(n) > len(m):
         return False
     else:
-        i = 0
-        while i < len(m) and m[i] == n[i]:
-            i += 1
-        if i == len(m):
-            return False
-        else:
-            return m[i] > n[i]
+        return not is_equal(m,n)
+        # i = 0
+        # while i < len(m) and m[i] == n[i]:
+        #     i += 1
+        # if i == len(m):
+        #     return False
+        # else:
+        #     return m[i] > n[i]
 
 def is_greater_or_equal(m,n):
     return is_greater(m,n) or is_equal(m,n)
-
-    # if len(m) > len(n):
-    #     return True
-    # elif len(n) > len(m):
-    #     return False
-    # else:
-    #     i = 0
-    #     while i < len(m) and m[i] == n[i]:
-    #         i += 1
-    #     if i == len(m):
-    #         return True
-    #     else:
-    #         return m[i] > n[i]
-
-
-
 
 
 def binary_addition(x,y):

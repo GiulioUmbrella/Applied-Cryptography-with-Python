@@ -175,26 +175,27 @@ def binary_power(m,n):
 
 
 def extended_eucludian_algorithm(m,n):
-    pass
-    # r_k0 = m
-    # r_k1 = n
-    #
+
+    r_k0 = m
+    r_k1 = n
+
     # r_list = [r_k0, r_k1]
     # a_list = [[1], [0]]
     # b_list = [[0], [1]]
     #
     #
-    # while(is_greater(r_k1, [0])):
-    #     q_k2, r_k2 = binary_division(r_k0, r_k1)
+    while(is_greater(r_k1, [0])):
+        q_k2, r_k2 = binary_division(r_k0, r_k1)
     #     print(q_k2, r_k2)
-    #     r_list.append(r_k2)
-    #     a_list.append(binary_subtraction(a_list[-2],binary_product(q_k2, a_list[-1])))
-    #     b_list.append(binary_subtraction(b_list[-2],binary_product(q_k2, b_list[-1])))
+        # r_list.append(r_k2)
+        # a_list.append(binary_subtraction(a_list[-2],binary_product(q_k2, a_list[-1])))
+        # b_list.append(binary_subtraction(b_list[-2],binary_product(q_k2, b_list[-1])))
     #
     #
-    #     r_k0 = r_k1
-    #     r_k1 = r_k2
+        r_k0 = r_k1
+        r_k1 = r_k2
     #
+    return r_k0
     # return r_k0, a_list[-1], b_list[-1]
 
 # def sequence_product():

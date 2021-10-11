@@ -45,3 +45,14 @@ class Binary:
 
     def __gt__(self, other):
         return is_greater(self.value, other.value)
+
+    @staticmethod
+    def gcd(self,other):
+        d = extended_eucludian_algorithm(self.value, other.value)
+        return Binary(d)
+
+
+x = Binary(16324)
+y = Binary(782)
+d = Binary.gcd(x,y).base10()
+print(d)

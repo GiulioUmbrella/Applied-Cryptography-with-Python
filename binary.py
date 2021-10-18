@@ -1,5 +1,5 @@
 from binary_ops import *
-from signed_binary_ops import *
+from binary_ops_signed import *
 import math
 
 class Binary:

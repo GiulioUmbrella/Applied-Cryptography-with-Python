@@ -14,7 +14,7 @@ def signed_division(abs_val_x, abs_val_y, sing_x, sing_y):
     abs_value = binary_division(abs_val_x, abs_val_y)
     sign = sign_x * sign_y
 
-    if abs_value == [0]
+    if abs_value == [0]:
         sign = 1
 
     return abs_value, sign

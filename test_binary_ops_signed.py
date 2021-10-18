@@ -1,4 +1,4 @@
-from signed_binary_ops import *
+from binary_ops_signed import *
 
 # # PRODOTTO
 # def test_product_0():

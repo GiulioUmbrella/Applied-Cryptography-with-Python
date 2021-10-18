@@ -65,6 +65,7 @@ def is_greater_or_equal(m,n):
 
 
 def binary_addition(x,y):
+
     m,n = set_longer_shorter(x,y)
     n = append_leading_zeros(m,n)
 
@@ -86,6 +87,7 @@ def binary_addition(x,y):
     return sum_list
 
 def binary_product(x,y):
+
     m,n = set_longer_shorter(x,y)
 
     shifts = []
@@ -197,18 +199,3 @@ def extended_eucludian_algorithm(m,n):
     #
     return r_k0
     # return r_k0, a_list[-1], b_list[-1]
-
-# def sequence_product():
-#     pass
-# num_values = 10
-# max_value  = 10
-# list_values = [base_10_to_base_n(randint(1, max_value)) for i in range(num_values)]
-#
-# partial_product = list_values[0]
-# for i in range(1,len(list_values)):
-#     partial_product = binary_product(partial_product, list_values[i])
-#
-# print(partial_product)
-
-# def sequence_product_modular():
-#     pass

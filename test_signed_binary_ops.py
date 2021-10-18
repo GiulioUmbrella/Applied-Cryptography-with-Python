@@ -56,16 +56,15 @@ from signed_binary_ops import *
 def test_sum_2():
     x = base_10_to_base_2(3)
     y = base_10_to_base_2(2)
-    sign, abs_value_sum = signed_addition(x,y,-1,1)
+    abs_value_sum, sign = signed_addition(x,y,-1,1)
     sum = base_2_to_base_10(abs_value_sum)
-
 
     assert sign == -1 and sum == 1
 
 def test_sum_3():
     x = base_10_to_base_2(3)
     y = base_10_to_base_2(2)
-    sign, abs_value_sum = signed_addition(x,y,1,-1)
+    abs_value_sum, sign = signed_addition(x,y,1,-1)
     sum = base_2_to_base_10(abs_value_sum)
 
     assert sign == 1 and sum == 1
@@ -73,7 +72,7 @@ def test_sum_3():
 def test_sum_4():
     x = base_10_to_base_2(2)
     y = base_10_to_base_2(3)
-    sign, abs_value_sum = signed_addition(x,y,1,-1)
+    abs_value_sum, sign = signed_addition(x,y,1,-1)
     sum = base_2_to_base_10(abs_value_sum)
 
     assert sign == -1 and sum == 1

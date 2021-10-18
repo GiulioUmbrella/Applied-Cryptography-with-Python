@@ -1,33 +1,56 @@
 from binary_ops import *
 
-def signed_multiplication(abs_val_x, abs_val_y, sing_x, sing_y):
-    abs_value_product = binary_product(abs_val_x, abs_val_y)
 
-    sign_product = sing_x * sing_y
+def signed_multiplication(abs_val_x, abs_val_y, sign_x, sign_y):
+    abs_value = binary_product(abs_val_x, abs_val_y)
+    sign = sign_x * sign_y
 
-    return sign_product, abs_value_product
+    if abs_value == [0]:
+        sign = 1
+
+    return abs_value, sign
+
+def signed_division(abs_val_x, abs_val_y, sing_x, sing_y):
+    abs_value = binary_division(abs_val_x, abs_val_y)
+    sign = sign_x * sign_y
+
+    if abs_value == [0]
+        sign = 1
+
+    return abs_value, sign
 
 
-def signed_addition(abs_val_x, abs_val_y, sing_x, sing_y):
-    if sing_x == sing_y:
-        return sing_x, binary_addition(abs_val_x, abs_val_y)
+def signed_addition(abs_val_x, abs_val_y, sign_x, sign_y):
+    abs_value = []
+    sign = 1
 
-    # print(abs_val_x)
-    # print(abs_val_y)
-    # print(sing_x)
-    # print(sing_y)
+    if sign_x == sign_y:
+        abs_value = binary_addition(abs_val_x, abs_val_y)
+        sign = sign_x
 
-    if is_greater_or_equal(abs_val_x, abs_val_y):
-        abs_value = binary_subtraction(abs_val_x, abs_val_y)
-        if sing_x >= sing_y:
-            sign = 1
-        else:
-            sign = -1
     else:
-        abs_value = binary_subtraction(abs_val_y, abs_val_x)
-        if sing_y >= sing_x:
-            sign = 1
-        else:
-            sign = -1
 
-    return sign, abs_value
+        if is_greater_or_equal(abs_val_x, abs_val_y):
+            abs_value = binary_subtraction(abs_val_x, abs_val_y)
+            sign = 1 if sign_x >= sign_y else -1
+
+        else:
+            abs_value = binary_subtraction(abs_val_y, abs_val_x)
+            sign = 1 if sign_y >= sign_x else -1
+
+    if abs_value == [0]:
+        sign = 1
+
+    return abs_value, sign
+
+
+
+
+def signed_is_equal():
+    pass
+
+def signed_is_greater():
+    pass
+
+def signed_is_greater_or_equal():
+    pass

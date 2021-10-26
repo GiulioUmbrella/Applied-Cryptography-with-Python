@@ -61,6 +61,10 @@ class Binary:
         d = extended_eucludian_algorithm(self.abs_value, other.abs_value)
         return Binary(d)
 
+    @staticmethod
+    def is_value_power(self)
+        pass 
+
 
 x = Binary(2)
 y = Binary(0)
